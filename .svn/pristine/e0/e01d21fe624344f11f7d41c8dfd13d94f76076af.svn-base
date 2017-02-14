@@ -1,0 +1,130 @@
+//
+//  ListCell_5TableViewCell.m
+//  LevelModel1
+//
+//  Created by 李明星 on 2016/12/29.
+//  Copyright © 2016年 TSou. All rights reserved.
+//
+
+#import "ListCell_5TableViewCell.h"
+
+@interface ListCell_5TableViewCell ()
+
+/** 标题*/
+@property (nonatomic, strong) UILabel *titleLb;
+/** 时间*/
+@property (nonatomic, strong) UILabel *shortLb;
+/** 右边箭头*/
+@property (nonatomic, strong) UIImageView *accessView;
+/** 图片*/
+@property (nonatomic, strong) UIImageView *logoIv;
+
+
+@end
+
+@implementation ListCell_5TableViewCell
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    // Initialization code
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+    
+    // Configure the view for the selected state
+}
+
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        [self.contentView sd_addSubviews:@[self.titleLb, self.shortLb, self.accessView, self.logoIv]];
+        
+        
+        _logoIv.sd_layout
+        .topSpaceToView(self.contentView, 15)
+        .leftSpaceToView(self.contentView, 15)
+        .heightIs(70)
+        .widthIs(70);
+        
+        
+        self.titleLb.sd_layout
+        .topSpaceToView(self.contentView, 15)
+        .leftSpaceToView(_logoIv, 10)
+        .rightSpaceToView(self.contentView, 30)
+        .autoHeightRatio(0);
+        [_titleLb setMaxNumberOfLinesToShow:1];
+        
+        
+        _shortLb.sd_layout
+        .topSpaceToView(_titleLb, 20)
+        .leftEqualToView(_titleLb)
+        .rightEqualToView(_titleLb)
+        .autoHeightRatio(0);
+        [_shortLb setMaxNumberOfLinesToShow:1];
+        
+        _accessView.sd_layout
+        .centerYEqualToView(self.contentView)
+        .rightSpaceToView(self.contentView, 10)
+        .heightIs(12)
+        .widthIs(7);
+
+    }
+    return self;
+}
+
+
+- (void)setModel:(NeedsModel *)model{
+    _model  = model;
+    _titleLb.text = model.title;
+    _shortLb.text = model.regtime;
+    NSLog(@"%@, %@", model.type, model.title);
+    if (model.logo.length == 0 || [model.logo isEqualToString:@"0.gif"]) {
+        _logoIv.sd_layout
+        .widthIs(0);
+    }else{
+        _logoIv.sd_layout
+        .widthIs(70);
+        NSString *url = [NSString stringWithFormat:@"https://appserver.1035.mobi/MobiSoft/upload/%@", model.logo];
+        [_logoIv sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:Placeholder_middle];
+    }
+}
+
+
+#pragma mark ----------------实例
+
+- (UILabel *)titleLb{
+    if (!_titleLb) {
+        _titleLb  = [[UILabel alloc] init];
+        _titleLb.font = FONT(15);
+        _titleLb.textColor = BLACKTEXTCOLOR;
+    }
+    return _titleLb;
+}
+
+- (UILabel *)shortLb{
+    if (!_shortLb) {
+        _shortLb = [[UILabel alloc] init];
+        _shortLb.font = FONT(13);
+        _shortLb.textColor = SHENTEXTCOLOR;
+    }
+    return _shortLb;
+}
+
+- (UIImageView *)accessView{
+    if (!_accessView) {
+        _accessView = [[UIImageView alloc] init];
+        _accessView.image = IMAGE(@"classify8-1");
+    }
+    return _accessView;
+}
+
+- (UIImageView *)logoIv{
+    if (!_logoIv) {
+        _logoIv = [[UIImageView alloc] init];
+    }
+    return _logoIv;
+}
+
+@end

@@ -1,0 +1,57 @@
+PODS:
+  - BaiduMapKit (3.1.0)
+  - GTSDK (1.5.0-noidfa)
+  - JSPatch (1.1):
+    - JSPatch/Core (= 1.1)
+  - JSPatch/Core (1.1)
+  - MJRefresh (3.1.12)
+  - Reachability (3.2)
+  - SDAutoLayout (2.1.7)
+  - SDCycleScrollView (1.65):
+    - SDWebImage (~> 3.7)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
+  - SVProgressHUD (2.0.4)
+  - UMengUShare/Core (6.0.3):
+    - UMengUShare/Network
+  - UMengUShare/Network (6.0.3)
+  - UMengUShare/Social/QQ (6.0.3):
+    - UMengUShare/Core
+  - UMengUShare/Social/Sina (6.0.3):
+    - UMengUShare/Core
+  - UMengUShare/Social/WeChat (6.0.3):
+    - UMengUShare/Core
+  - UMengUShare/UI (6.0.3):
+    - UMengUShare/Core
+
+DEPENDENCIES:
+  - BaiduMapKit
+  - GTSDK (= 1.5.0-noidfa)
+  - JSPatch (~> 1.1)
+  - MJRefresh (~> 3.1.10)
+  - Reachability (~> 3.2)
+  - SDAutoLayout (~> 2.1.4)
+  - SDCycleScrollView (~> 1.65)
+  - SDWebImage (~> 3.8.1)
+  - SVProgressHUD (~> 2.0.3)
+  - UMengUShare/Social/QQ
+  - UMengUShare/Social/Sina
+  - UMengUShare/Social/WeChat
+  - UMengUShare/UI
+
+SPEC CHECKSUMS:
+  BaiduMapKit: 4cfaedb118cff7e157e9771859a4bf65a261b2a1
+  GTSDK: dc57fff2c826e52f1438d284b3fcb774b9fb6425
+  JSPatch: ade285ad1d8f06146ed6054a39cef87509453299
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  SDAutoLayout: e9b36d04b8c0b504762a04d76fbbe5108944297a
+  SDCycleScrollView: f72904c77698a7f93a41bcbbc2d78b073bf7326c
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  SVProgressHUD: bfde85ed6c573ea802b9cb37894ed9b629034f1b
+  UMengUShare: f231fc086d789d4e560a5090dcc13a2db15c686d
+
+PODFILE CHECKSUM: 36be4fc56596cf57ab57ee535a1e9e10d510e6ac
+
+COCOAPODS: 1.2.0.beta.1
